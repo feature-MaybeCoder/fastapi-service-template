@@ -19,7 +19,7 @@ RUN curl -sSL \
 
 # Install dependencies
 COPY poetry.lock pyproject.toml /build/
-RUN poetry install --no-interaction --no-ansi
+RUN poetry install --no-interaction --no-ansi  --no-root
 
 # Run app
 ENTRYPOINT uvicorn app.main:fa_app --reload --host 0.0.0.0 --port 8010
